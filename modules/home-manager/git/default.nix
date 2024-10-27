@@ -1,8 +1,8 @@
 {...}: {
   programs.git = {
     enable = true;
-    userName = "0xTux";
-    userEmail = "0xtux@pm.me";
+    userName = "tuxdotrs";
+    userEmail = "t@tux.rs";
     signing = {
       key = "~/.ssh/id_ed25519.pub";
       signByDefault = true;
