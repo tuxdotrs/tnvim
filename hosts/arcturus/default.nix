@@ -57,6 +57,10 @@
   };
 
   boot = {
+    kernel.sysctl = {
+      "vm.swappiness" = 10;
+    };
+
     kernelPackages = pkgs.linuxPackages_zen;
     initrd.systemd.enable = true;
 
