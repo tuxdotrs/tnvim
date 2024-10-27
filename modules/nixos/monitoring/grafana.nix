@@ -1,6 +1,7 @@
 {
   lib,
   username,
+  email,
   ...
 }: {
   services = {
@@ -10,7 +11,7 @@
         server.http_port = 8888;
         security = {
           admin_user = "${username}";
-          admin_email = "0xtux@pm.me";
+          admin_email = "${email}";
         };
       };
     };

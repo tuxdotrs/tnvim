@@ -2,6 +2,7 @@
   pkgs,
   username,
   config,
+  email,
   ...
 }: {
   imports = [
@@ -48,7 +49,7 @@
 
     acme = {
       acceptTerms = true;
-      defaults.email = "0xtux@pm.me";
+      defaults.email = "${email}";
       certs = {
         "tux.rs" = {
           domain = "*.tux.rs";

@@ -1,9 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  email,
+  ...
+}: {
   programs.rbw = {
     enable = true;
     settings = {
       base_url = "https://bw.tux.rs";
-      email = "0xtux@pm.me";
+      email = "${email}";
     };
   };
 

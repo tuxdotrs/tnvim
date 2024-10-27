@@ -41,6 +41,7 @@
       "x86_64-linux"
     ];
     username = "tux";
+    email = "t@tux.rs";
   in {
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
@@ -52,42 +53,42 @@
     # 'nixos-rebuild switch --flake .#your-hostname'
     nixosConfigurations = {
       arcturus = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs username;};
+        specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/arcturus];
       };
 
       canopus = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs username;};
+        specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/canopus];
       };
 
       alpha = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs username;};
+        specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/alpha];
       };
 
       sirius = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs username;};
+        specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/sirius];
       };
 
       vega = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs username;};
+        specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/vega];
       };
 
       capella = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs username;};
+        specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/capella];
       };
 
       vps = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs username;};
+        specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/vps];
       };
 
       isoImage = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs username;};
+        specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/isoImage];
       };
     };
@@ -97,7 +98,7 @@
     homeConfigurations = {
       "${username}@canopus" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs username;};
+        extraSpecialArgs = {inherit inputs outputs username email;};
         modules = [
           ./modules/home-manager
         ];

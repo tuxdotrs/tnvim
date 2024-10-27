@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  email,
   ...
 }: {
   services = {
@@ -16,8 +17,8 @@
 
       adminUser = {
         activate = true;
+        email = "${email}";
         name = "tux";
-        email = "0xtux@pm.me";
         passwordFile = config.sops.secrets.plausible_password.path;
       };
 

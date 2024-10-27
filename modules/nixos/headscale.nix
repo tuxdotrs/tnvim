@@ -2,11 +2,12 @@
   config,
   pkgs,
   lib,
+  email,
   ...
 }: {
   security = {
     acme = {
-      defaults.email = "0xtux@pm.me";
+      defaults.email = "${email}";
       acceptTerms = true;
     };
   };
