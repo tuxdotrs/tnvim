@@ -35,10 +35,6 @@
       enable = true;
       plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
     };
-    nix-ld = {
-      enable = true;
-      package = pkgs.nix-ld-rs;
-    };
     nm-applet.enable = true;
   };
 
