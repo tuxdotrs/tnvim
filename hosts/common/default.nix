@@ -16,6 +16,7 @@ in {
     inputs.impermanence.nixosModules.impermanence
     inputs.home-manager.nixosModules.home-manager
 
+    ../../modules/nixos/fail2ban.nix
     ../../modules/nixos/sops.nix
   ];
 
