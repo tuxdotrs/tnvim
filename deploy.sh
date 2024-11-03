@@ -11,5 +11,5 @@ if [ -z "$target_hosts" ]; then
 fi
 
 for target_host in ${target_hosts//,/ }; do
-  nixos-rebuild switch --flake .#$target_host --target-host $target_host --build-host $hostname --use-remote-sudo --use-substitutes --log-format internal-json -v $@
+  nixos-rebuild switch --flake .#$target_host --target-host $target_host --build-host $hostname --use-remote-sudo --use-substitutes $@
 done
