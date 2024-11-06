@@ -55,6 +55,7 @@
     stremio
     galaxy-buds-client
     copyq
+    vlc
   ];
 
   home.persistence."/persist/home/${username}" = {
@@ -71,6 +72,7 @@
       ".config/copyq"
       ".config/discord"
       ".config/Vencord"
+      ".config/obs-studio"
       ".local/share/nvim"
       ".local/share/zoxide"
       ".local/share/Smart\ Code\ ltd"
