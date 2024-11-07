@@ -7,6 +7,7 @@
     wakapi = {
       enable = true;
       passwordSaltFile = config.sops.secrets.wakapi_salt.path;
+      database.createLocally = true;
       settings = {
         app.avatar_url_template = "https://www.gravatar.com/avatar/{email_hash}.png";
 
