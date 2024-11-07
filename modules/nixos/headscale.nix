@@ -18,15 +18,15 @@
       port = 8080;
       address = "0.0.0.0";
       settings = {
-        dns_config = {
-          override_local_dns = true;
-          base_domain = "tux.rs";
+        dns = {
+          base_domain = "hs.tux.rs";
+          search_domains = ["tux.rs"];
           magic_dns = true;
-          nameservers = [
+          nameservers.global = [
             "9.9.9.9"
           ];
         };
-        server_url = "https://hs.tux.rs";
+        # server_url = "https://hs.tux.rs:443";
         metrics_listen_addr = "0.0.0.0:8095";
         logtail = {
           enabled = false;
