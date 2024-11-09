@@ -171,6 +171,7 @@
 
   services = {
     resolved.enable = true;
+    flatpak.enable = true;
 
     pipewire = {
       enable = true;
