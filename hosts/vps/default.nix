@@ -1,119 +1,92 @@
 {
   modulesPath,
   inputs,
-  outputs,
-  pkgs,
   username,
-  email,
+  lib,
   ...
 }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
     inputs.disko.nixosModules.default
-    inputs.home-manager.nixosModules.home-manager
     (import ./disko.nix {device = "/dev/sda";})
+
+    ../common
   ];
 
   nixpkgs = {
     hostPlatform = "x86_64-linux";
+  };
 
-    overlays = [
-      outputs.overlays.additions
-      outputs.overlays.modifications
-      outputs.overlays.unstable-packages
-      outputs.overlays.nur
-    ];
+  boot = {
+    initrd.systemd = {
+      enable = lib.mkForce true;
 
-    config = {
-      allowUnfree = true;
-      joypixels.acceptLicense = true;
+      services.wipe-my-fs = {
+        wantedBy = ["initrd.target"];
+        after = ["initrd-root-device.target"];
+        before = ["sysroot.mount"];
+        unitConfig.DefaultDependencies = "no";
+        serviceConfig.Type = "oneshot";
+        script = ''
+          mkdir /btrfs_tmp
+          mount /dev/disk/by-partlabel/disk-primary-root /btrfs_tmp
+
+          if [[ -e /btrfs_tmp/root ]]; then
+              mkdir -p /btrfs_tmp/old_roots
+              timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
+              mv /btrfs_tmp/root "/btrfs_tmp/old_roots/$timestamp"
+          fi
+
+          delete_subvolume_recursively() {
+              IFS=$'\n'
+              for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
+                  delete_subvolume_recursively "/btrfs_tmp/$i"
+              done
+              btrfs subvolume delete "$1"
+          }
+
+          for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
+              delete_subvolume_recursively "$i"
+          done
+
+          btrfs subvolume create /btrfs_tmp/root
+          umount /btrfs_tmp
+        '';
+      };
     };
-  };
 
-  nix = {
-    package = pkgs.lix;
-    settings = {
-      experimental-features = "nix-command flakes";
-      auto-optimise-store = true;
-      trusted-users = ["${username}"];
-      warn-dirty = false;
-      substituters = [
-        "https://cache.nixos.org?priority=10"
-        "https://anyrun.cachix.org"
-        "https://fufexan.cachix.org"
-        "https://helix.cachix.org"
-        "https://hyprland.cachix.org"
-        "https://nix-community.cachix.org"
-        "https://nix-gaming.cachix.org"
-        "https://yazi.cachix.org"
-      ];
-      trusted-public-keys = [
-        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-        "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
-        "fufexan.cachix.org-1:LwCDjCJNJQf5XD2BV+yamQIMZfcKWR9ISIFy5curUsY="
-        "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
-        "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
-      ];
-    };
-  };
-
-  boot.loader.grub = {
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-  };
-
-  networking.hostName = "vps";
-
-  time.timeZone = "Asia/Kolkata";
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    extraLocaleSettings = {
-      LC_ADDRESS = "en_IN";
-      LC_IDENTIFICATION = "en_IN";
-      LC_MEASUREMENT = "en_IN";
-      LC_MONETARY = "en_IN";
-      LC_NAME = "en_IN";
-      LC_NUMERIC = "en_IN";
-      LC_PAPER = "en_IN";
-      LC_TELEPHONE = "en_IN";
-      LC_TIME = "en_IN";
-    };
-  };
-
-  programs = {
-    zsh.enable = true;
-    nh = {
-      enable = true;
-      clean.enable = true;
-      clean.extraArgs = "--keep-since 5d --keep 5";
-      flake = "/home/${username}/Projects/nixos-config";
-    };
-  };
-
-  services = {
-    openssh = {
-      enable = true;
-      settings = {
-        PasswordAuthentication = false;
+    loader = {
+      grub = {
+        efiSupport = true;
+        efiInstallAsRemovable = true;
       };
     };
   };
 
+  networking.hostName = "vps";
+
   users = {
-    mutableUsers = false;
-    defaultUserShell = pkgs.zsh;
     users.${username} = {
       password = "${username}";
-      isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel" "storage"];
-      openssh.authorizedKeys.keys = [
-        ''ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL+OzPUe2ECPC929DqpkM39tl/vdNAXfsRnmrGfR+X3D ${email}''
-      ];
+      hashedPasswordFile = lib.mkForce null;
     };
+  };
+
+  programs.fuse.userAllowOther = true;
+  fileSystems."/persist".neededForBoot = true;
+  environment.persistence."/persist" = {
+    hideMounts = true;
+    directories = [
+      "/var/log"
+      "/var/lib/nixos"
+    ];
+    files = [
+      "/etc/ssh/ssh_host_ed25519_key"
+      "/etc/ssh/ssh_host_ed25519_key.pub"
+      "/etc/ssh/ssh_host_rsa_key"
+      "/etc/ssh/ssh_host_rsa_key.pub"
+    ];
   };
 
   home-manager.users.${username} = {
