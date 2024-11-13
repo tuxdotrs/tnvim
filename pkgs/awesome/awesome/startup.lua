@@ -2,7 +2,7 @@ local awful = require("awful")
 
 awful.spawn.with_shell([[
   if ! pidof barrierc; then
-    barrierc -f --debug INFO --display :0 --name esoteric --disable-crypto 192.168.1.2:24800 &
+    barrierc -f --debug INFO --display :0 --name canopus --disable-crypto pc:24800 &
   fi
 ]])
 
