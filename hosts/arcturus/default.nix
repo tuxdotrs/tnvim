@@ -113,7 +113,9 @@
       grub = {
         efiSupport = true;
         efiInstallAsRemovable = true;
+        configurationLimit = 10;
       };
+      timeout = 1;
     };
   };
 
