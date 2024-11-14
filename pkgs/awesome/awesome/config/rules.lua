@@ -79,3 +79,9 @@ ruled.client.connect_signal("request::rules", function()
     properties = { screen = 1, tag = "4" },
   })
 end)
+
+client.connect_signal("request::manage", function(c)
+  if not awesome.startup then
+    c:to_secondary_section()
+  end
+end)
