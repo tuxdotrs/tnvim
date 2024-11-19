@@ -69,6 +69,7 @@
       "Stuff"
       ".mozilla"
       ".ssh"
+      ".wakatime"
       ".config/copyq"
       ".config/discord"
       ".config/Vencord"
