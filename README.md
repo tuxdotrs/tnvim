@@ -82,4 +82,6 @@ sudo nixos-rebuild switch --flake .#<HOSTNAME>
 
 ## Spent weeks on this system configuration 😢
 
-<img src="https://user-images.githubusercontent.com/97862450/265550523-2f66a8b6-4347-40af-89c6-12db3a61cc7c.jpeg" width="50%" />
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/97862450/265550523-2f66a8b6-4347-40af-89c6-12db3a61cc7c.jpeg" width="60%">
+</div>
