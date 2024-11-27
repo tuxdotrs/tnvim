@@ -10,4 +10,5 @@ return {
   gpu = require(... .. ".gpu"),
   profile = require(... .. ".profile"),
   systray = require(... .. ".systray"),
+  stats = require(... .. ".stats"),
 }
