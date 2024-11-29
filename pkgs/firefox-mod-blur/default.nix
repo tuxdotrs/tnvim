@@ -5,13 +5,13 @@
 }:
 stdenv.mkDerivation {
   pname = "firefox-mod-blur";
-  version = "v2.7.8";
+  version = "v2.14";
 
   src = pkgs.fetchFromGitHub {
     owner = "datguypiko";
     repo = "Firefox-Mod-Blur";
     rev = "refs/heads/master";
-    sha256 = "sha256-iiYc4NJGuD7Hn0ei2MOiNMytdHjI6EjsmCPVxlSrcAI=";
+    sha256 = "sha256-Hkz3uRIN4u30YdwCeBtCV7icdZ9EnkDWuOpFVZaU1mc=";
   };
 
   installPhase = ''
