@@ -35,7 +35,6 @@
       enable = true;
       enableZshIntegration = true;
     };
-    cava.enable = true;
   };
 
   home.packages = with pkgs; [
