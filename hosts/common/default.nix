@@ -29,7 +29,7 @@ in {
     overlays = [
       outputs.overlays.additions
       outputs.overlays.modifications
-      outputs.overlays.unstable-packages
+      outputs.overlays.stable-packages
       outputs.overlays.nur
       outputs.overlays.nix-vscode-extensions
     ];
