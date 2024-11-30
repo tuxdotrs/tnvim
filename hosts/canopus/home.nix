@@ -56,6 +56,7 @@
     galaxy-buds-client
     copyq
     vlc
+    tor-browser
   ];
 
   home.persistence."/persist/home/${username}" = {
