@@ -41,8 +41,6 @@
     dconf.enable = true;
   };
 
-  fonts.packages = with pkgs; [(nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})];
-
   environment.persistence."/persist" = {
     enable = false;
   };
