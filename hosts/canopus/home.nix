@@ -78,6 +78,7 @@
       ".local/share/nvim"
       ".local/share/zoxide"
       ".local/share/Smart\ Code\ ltd"
+      ".local/share/GalaxyBudsClient"
       ".local/state/lazygit"
       ".cache/spotify"
     ];
