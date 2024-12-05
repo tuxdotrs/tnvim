@@ -74,6 +74,7 @@
       ".config/copyq"
       ".config/discord"
       ".config/Vencord"
+      ".config/sops"
       ".config/obs-studio"
       ".local/share/nvim"
       ".local/share/zoxide"
