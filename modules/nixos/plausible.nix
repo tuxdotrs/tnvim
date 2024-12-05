@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  email,
   ...
 }: {
   services = {
@@ -13,13 +12,6 @@
         port = 2100;
         disableRegistration = true;
         secretKeybaseFile = config.sops.secrets.plausible_key.path;
-      };
-
-      adminUser = {
-        activate = true;
-        email = "${email}";
-        name = "tux";
-        passwordFile = config.sops.secrets.plausible_password.path;
       };
 
       database.postgres = {
