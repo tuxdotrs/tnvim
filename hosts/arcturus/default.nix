@@ -45,10 +45,6 @@
       sopsFile = ./secrets.yaml;
     };
 
-    plausible_password = {
-      sopsFile = ./secrets.yaml;
-    };
-
     plausible_key = {
       sopsFile = ./secrets.yaml;
     };
