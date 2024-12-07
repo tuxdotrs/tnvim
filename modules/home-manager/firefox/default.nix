@@ -65,7 +65,6 @@
           darkreader
           bitwarden
           wappalyzer
-          private-relay
           clearurls
         ];
       };
