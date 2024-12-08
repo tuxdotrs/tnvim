@@ -32,10 +32,32 @@
 
 ## Installation
 
-Hosts can be build with:
+Boot into NixOS bootable USB and then enter the following commands
 
 ```
-sudo nixos-rebuild switch --flake .#<HOSTNAME>
+# Clone this repositry
+git clone https://github.com/tuxdotrs/nixos-config.git
+
+# Navigate to the repository directory
+cd nixos-config
+
+# Install disko for disk partitioning
+nix-shell -p disko
+
+# Partition the disk and make sure to replace DISK_PATH (eg. /dev/vda)
+disko --mode disko ./hosts/canopus/disko.nix --arg device '"DISK_PATH"'
+
+# Generate the hardware-configuration.nix file for your system
+nixos-generate-config --no-filesystems --root /mnt
+
+# Replace the hardware-configuration.nix with generated one
+cp /mnt/etc/nixos/hardware-configuration.nix ./hosts/canopus/
+
+# Install
+nixos-install --root /mnt --flake .#canopus
+
+# Reboot to your beautiful DE
+reboot
 ```
 
 ## Components
