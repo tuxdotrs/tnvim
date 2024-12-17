@@ -19,7 +19,7 @@
     };
   };
 
-  nur = inputs.nur.overlay;
+  nur = inputs.nur.overlays.default;
 
   nix-vscode-extensions = inputs.nix-vscode-extensions.overlays.default;
 }
