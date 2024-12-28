@@ -26,6 +26,7 @@
     ../../modules/nixos/searx.nix
     ../../modules/nixos/wakapi.nix
     ../../modules/nixos/nextcloud.nix
+    ../../modules/nixos/silver-bullet.nix
   ];
 
   sops.secrets = {
@@ -56,6 +57,10 @@
     nextcloud_password = {
       sopsFile = ./secrets.yaml;
       owner = "nextcloud";
+    };
+
+    silver_bullet = {
+      sopsFile = ./secrets.yaml;
     };
   };
 
@@ -197,6 +202,7 @@
       "/var/lib/promtail"
       "/var/lib/private"
       "/var/lib/nextcloud"
+      "/var/lib/silverbullet"
     ];
     files = [
       "/etc/ssh/ssh_host_ed25519_key"
