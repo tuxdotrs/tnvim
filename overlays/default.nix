@@ -4,6 +4,8 @@
   modifications = final: prev: {
     awesome = inputs.nixpkgs-f2k.packages.${prev.system}.awesome-git;
 
+    ghostty = inputs.ghostty.packages.x86_64-linux.default;
+
     discord = prev.discord.override {
       withOpenASAR = true;
       withVencord = true;

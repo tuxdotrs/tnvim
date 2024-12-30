@@ -10,6 +10,7 @@
     ../../modules/home-manager/picom
     ../../modules/home-manager/alacritty
     ../../modules/home-manager/wezterm
+    ../../modules/home-manager/ghostty
     ../../modules/home-manager/desktop/rofi
     ../../modules/home-manager/barrier
     ../../modules/home-manager/firefox
