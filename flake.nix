@@ -93,6 +93,11 @@
         specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/isoImage];
       };
+
+      homelab = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs username email;};
+        modules = [./hosts/homelab];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
