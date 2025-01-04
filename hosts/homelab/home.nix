@@ -4,10 +4,16 @@
       "Projects"
       "Stuff"
       ".ssh"
+      ".wakatime"
+      ".config/sops"
+      ".local/share/nvim"
+      ".local/share/zoxide"
+      ".local/state/lazygit"
     ];
     files = [
       ".zsh_history"
       ".zcompdump"
+      ".wakatime.cfg"
     ];
     allowOther = true;
   };
