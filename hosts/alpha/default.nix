@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ./hardware-configuration.nix
+    ./hardware.nix
     ../common
     ../../modules/nixos/uptime-kuma.nix
   ];

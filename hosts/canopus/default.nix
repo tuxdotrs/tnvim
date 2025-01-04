@@ -11,7 +11,7 @@
     inputs.disko.nixosModules.default
 
     (import ./disko.nix {device = "/dev/nvme0n1";})
-    ./hardware-configuration.nix
+    ./hardware.nix
 
     ../common
     ../../modules/nixos/desktop
