@@ -126,7 +126,7 @@ in {
   };
 
   home-manager = {
-    backupFileExtension = "backup";
+    backupFileExtension = "hm-backup";
     useUserPackages = true;
     extraSpecialArgs = {inherit inputs outputs username email;};
     users.${username} = {
