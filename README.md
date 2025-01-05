@@ -24,7 +24,7 @@
 | --- | ------- | -------- | -------------------------------------- | ---------------------------------------------------------------------------------- |
 | 💻  | Desktop | sirius   | Ryzen 5 3600 - 64GB RAM - RTX 3080 TI  | Multi-monitor desktop running Windows Subsystem for Linux.                         |
 | 🖥️  | Laptop  | canopus  | Ryzen 9 5900HS - 16 GB RAM - RTX 3060  | Optimized for productivity on the go and some gaming.                              |
-| 🖥️  | Server  | homelab  | Ryzen 7 8700G - 32 GB RAM              | WIP                                                                                |
+| 🖥️  | Server  | homelab  | Ryzen 7 8700G - 32 GB RAM - Radeon 780M| WIP                                                                                |
 | ☁️  | VPS     | arcturus | 4 Core - 8 GB RAM                      | Primary server responsible for exposing my homelab applications to the internet.   |
 | 🥔  | VPS     | alpha    | 2 Core - 4 GB RAM                      | Monitors uptime and health status of all services across the infrastructure.       |
 | 🥔  | Server  | vega     | Cortex A53 - 1 GB RAM                  | Running AdGuard Home for network-wide ad blocking.                                 |
