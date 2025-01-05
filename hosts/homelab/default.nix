@@ -13,7 +13,7 @@
 
     ../common
     ../../modules/nixos/desktop
-    ../../modules/nixos/virtualisation
+    ../../modules/nixos/virtualisation/docker.nix
   ];
 
   networking = {
