@@ -24,6 +24,10 @@
     };
     firewall = {
       enable = true;
+      allowedTCPPorts = [22];
+
+      # Facilitate firewall punching
+      allowedUDPPorts = [41641];
     };
   };
 
