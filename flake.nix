@@ -4,13 +4,11 @@
   outputs = {
     self,
     nixpkgs,
-    home-manager,
     deploy-rs,
     ...
   } @ inputs: let
     inherit (self) outputs;
     inherit (inputs.nixpkgs.lib) nixosSystem;
-    inherit (home-manager.lib) homeManagerConfiguration;
     forAllSystems = nixpkgs.lib.genAttrs [
       "x86_64-linux"
       "aarch64-linux"
@@ -49,18 +47,6 @@
       vps = nixosSystem (mkNixOSConfig "vps");
       isoImage = nixosSystem (mkNixOSConfig "isoImage");
       homelab = nixosSystem (mkNixOSConfig "homelab");
-    };
-
-    # Standalone home-manager configuration entrypoint
-    # home-manager switch --flake .#your-username@your-hostname'
-    homeConfigurations = {
-      "${username}@canopus" = homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs username email;};
-        modules = [
-          ./modules/home-manager
-        ];
-      };
     };
 
     deploy = {
