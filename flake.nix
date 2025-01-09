@@ -1,37 +1,6 @@
 {
   description = "tux's NixOS Flake";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.11";
-    nixos-wsl = {
-      url = "github:nix-community/nixos-wsl";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    wezterm-flake = {
-      url = "github:wez/wezterm/main?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    ghostty.url = "github:ghostty-org/ghostty";
-    nixos-hardware.url = "github:nixos/nixos-hardware";
-    nixpkgs-f2k.url = "github:moni-dz/nixpkgs-f2k";
-    nur.url = "github:nix-community/nur";
-    sops-nix.url = "github:Mic92/sops-nix";
-    impermanence.url = "github:nix-community/impermanence";
-  };
-
   outputs = {
     self,
     nixpkgs,
@@ -114,5 +83,36 @@
         ];
       };
     };
+  };
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.11";
+    nixos-wsl = {
+      url = "github:nix-community/nixos-wsl";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    wezterm-flake = {
+      url = "github:wez/wezterm/main?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ghostty.url = "github:ghostty-org/ghostty";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
+    nixpkgs-f2k.url = "github:moni-dz/nixpkgs-f2k";
+    nur.url = "github:nix-community/nur";
+    sops-nix.url = "github:Mic92/sops-nix";
+    impermanence.url = "github:nix-community/impermanence";
   };
 }
