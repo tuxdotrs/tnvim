@@ -5,6 +5,7 @@
     self,
     nixpkgs,
     home-manager,
+    deploy-rs,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -20,6 +21,14 @@
     mkNixOSConfig = host: {
       specialArgs = {inherit inputs outputs username email;};
       modules = [./hosts/${host}];
+    };
+
+    mkNode = hostname: {
+      inherit hostname;
+      profiles.system = {
+        user = "root";
+        path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.${hostname};
+      };
     };
   in {
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
@@ -53,6 +62,18 @@
         ];
       };
     };
+
+    deploy = {
+      nodes = {
+        arcturus = mkNode "arcturus";
+        canopus = mkNode "canopus";
+        alpha = mkNode "alpha";
+        sirius = mkNode "sirius";
+        vega = mkNode "vega";
+        capella = mkNode "capella";
+        homelab = mkNode "homelab";
+      };
+    };
   };
 
   inputs = {
@@ -84,5 +105,6 @@
     nur.url = "github:nix-community/nur";
     sops-nix.url = "github:Mic92/sops-nix";
     impermanence.url = "github:nix-community/impermanence";
+    deploy-rs.url = "github:serokell/deploy-rs";
   };
 }

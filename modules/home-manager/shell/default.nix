@@ -74,5 +74,6 @@
     air
     templ
     ffmpeg
+    deploy-rs
   ];
 }
