@@ -12,7 +12,6 @@
     ];
     files = [
       ".zsh_history"
-      ".zcompdump"
       ".wakatime.cfg"
     ];
     allowOther = true;

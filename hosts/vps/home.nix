@@ -6,7 +6,6 @@
     ];
     files = [
       ".zsh_history"
-      ".zcompdump"
     ];
     allowOther = true;
   };
