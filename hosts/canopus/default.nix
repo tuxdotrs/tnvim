@@ -157,6 +157,8 @@
 
   programs = {
     ssh.startAgent = true;
+    xfconf.enable = true;
+    file-roller.enable = true;
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
