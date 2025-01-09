@@ -16,6 +16,11 @@
     ];
     username = "tux";
     email = "t@tux.rs";
+
+    mkNixOSConfig = host: {
+      specialArgs = {inherit inputs outputs username email;};
+      modules = [./hosts/${host}];
+    };
   in {
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
@@ -26,50 +31,15 @@
     # NixOS configuration entrypoint
     # 'nixos-rebuild switch --flake .#your-hostname'
     nixosConfigurations = {
-      arcturus = nixosSystem {
-        specialArgs = {inherit inputs outputs username email;};
-        modules = [./hosts/arcturus];
-      };
-
-      canopus = nixosSystem {
-        specialArgs = {inherit inputs outputs username email;};
-        modules = [./hosts/canopus];
-      };
-
-      alpha = nixosSystem {
-        specialArgs = {inherit inputs outputs username email;};
-        modules = [./hosts/alpha];
-      };
-
-      sirius = nixosSystem {
-        specialArgs = {inherit inputs outputs username email;};
-        modules = [./hosts/sirius];
-      };
-
-      vega = nixosSystem {
-        specialArgs = {inherit inputs outputs username email;};
-        modules = [./hosts/vega];
-      };
-
-      capella = nixosSystem {
-        specialArgs = {inherit inputs outputs username email;};
-        modules = [./hosts/capella];
-      };
-
-      vps = nixosSystem {
-        specialArgs = {inherit inputs outputs username email;};
-        modules = [./hosts/vps];
-      };
-
-      isoImage = nixosSystem {
-        specialArgs = {inherit inputs outputs username email;};
-        modules = [./hosts/isoImage];
-      };
-
-      homelab = nixosSystem {
-        specialArgs = {inherit inputs outputs username email;};
-        modules = [./hosts/homelab];
-      };
+      arcturus = nixosSystem (mkNixOSConfig "arcturus");
+      canopus = nixosSystem (mkNixOSConfig "canopus");
+      alpha = nixosSystem (mkNixOSConfig "alpha");
+      sirius = nixosSystem (mkNixOSConfig "sirius");
+      vega = nixosSystem (mkNixOSConfig "vega");
+      capella = nixosSystem (mkNixOSConfig "capella");
+      vps = nixosSystem (mkNixOSConfig "vps");
+      isoImage = nixosSystem (mkNixOSConfig "isoImage");
+      homelab = nixosSystem (mkNixOSConfig "homelab");
     };
 
     # Standalone home-manager configuration entrypoint
