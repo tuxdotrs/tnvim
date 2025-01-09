@@ -39,6 +39,8 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    inherit (inputs.nixpkgs.lib) nixosSystem;
+    inherit (home-manager.lib) homeManagerConfiguration;
     forAllSystems = nixpkgs.lib.genAttrs [
       "x86_64-linux"
     ];
@@ -54,47 +56,47 @@
     # NixOS configuration entrypoint
     # 'nixos-rebuild switch --flake .#your-hostname'
     nixosConfigurations = {
-      arcturus = nixpkgs.lib.nixosSystem {
+      arcturus = nixosSystem {
         specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/arcturus];
       };
 
-      canopus = nixpkgs.lib.nixosSystem {
+      canopus = nixosSystem {
         specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/canopus];
       };
 
-      alpha = nixpkgs.lib.nixosSystem {
+      alpha = nixosSystem {
         specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/alpha];
       };
 
-      sirius = nixpkgs.lib.nixosSystem {
+      sirius = nixosSystem {
         specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/sirius];
       };
 
-      vega = nixpkgs.lib.nixosSystem {
+      vega = nixosSystem {
         specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/vega];
       };
 
-      capella = nixpkgs.lib.nixosSystem {
+      capella = nixosSystem {
         specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/capella];
       };
 
-      vps = nixpkgs.lib.nixosSystem {
+      vps = nixosSystem {
         specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/vps];
       };
 
-      isoImage = nixpkgs.lib.nixosSystem {
+      isoImage = nixosSystem {
         specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/isoImage];
       };
 
-      homelab = nixpkgs.lib.nixosSystem {
+      homelab = nixosSystem {
         specialArgs = {inherit inputs outputs username email;};
         modules = [./hosts/homelab];
       };
@@ -103,7 +105,7 @@
     # Standalone home-manager configuration entrypoint
     # home-manager switch --flake .#your-username@your-hostname'
     homeConfigurations = {
-      "${username}@canopus" = home-manager.lib.homeManagerConfiguration {
+      "${username}@canopus" = homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs username email;};
         modules = [
