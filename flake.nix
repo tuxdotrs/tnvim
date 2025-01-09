@@ -43,6 +43,7 @@
     inherit (home-manager.lib) homeManagerConfiguration;
     forAllSystems = nixpkgs.lib.genAttrs [
       "x86_64-linux"
+      "aarch64-linux"
     ];
     username = "tux";
     email = "t@tux.rs";
