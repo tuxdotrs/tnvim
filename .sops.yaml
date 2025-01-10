@@ -43,3 +43,8 @@ creation_rules:
       - age:
           - *tux
           - *alpha
+  - path_regex: hosts/capella/secrets.yaml$
+    key_groups:
+      - age:
+          - *tux
+          - *capella

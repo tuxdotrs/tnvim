@@ -12,7 +12,22 @@
 
     ../common
     ../../modules/nixos/virtualisation/docker.nix
+    ../../modules/nixos/containers/cs2.nix
   ];
+
+  sops.secrets = {
+    "cs2_secrets/SRCDS_TOKEN" = {
+      sopsFile = ./secrets.yaml;
+    };
+
+    "cs2_secrets/CS2_RCONPW" = {
+      sopsFile = ./secrets.yaml;
+    };
+
+    "cs2_secrets/CS2_PW" = {
+      sopsFile = ./secrets.yaml;
+    };
+  };
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
@@ -20,6 +35,8 @@
     hostName = "capella";
     firewall.enable = false;
   };
+
+  security.sudo.wheelNeedsPassword = false;
 
   boot.loader.grub = {
     efiSupport = true;
