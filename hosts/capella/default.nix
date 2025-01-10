@@ -36,8 +36,6 @@
     firewall.enable = false;
   };
 
-  security.sudo.wheelNeedsPassword = false;
-
   boot.loader.grub = {
     efiSupport = true;
     efiInstallAsRemovable = true;

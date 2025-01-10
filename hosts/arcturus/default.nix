@@ -130,8 +130,6 @@
   };
 
   security = {
-    sudo.wheelNeedsPassword = false;
-
     acme = {
       acceptTerms = true;
       defaults.email = "${email}";
