@@ -8,7 +8,7 @@
   programs.firefox = {
     enable = true;
 
-    package = pkgs.stable.firefox.override {
+    package = pkgs.firefox.override {
       extraPolicies = {
         CaptivePortal = false;
         DisableFirefoxStudies = true;
