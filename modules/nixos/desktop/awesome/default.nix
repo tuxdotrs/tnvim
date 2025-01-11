@@ -48,7 +48,7 @@
     xdotool
     xclip
     xorg.xbacklight
-    gpick
+    stable.gpick
     alsa-utils
     pavucontrol
     brightnessctl

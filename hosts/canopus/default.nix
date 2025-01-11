@@ -249,7 +249,7 @@
     asusd = {
       enable = true;
       enableUserService = true;
-      asusdConfig = ''
+      asusdConfig.text = ''
         (
           charge_control_end_threshold: 100,
           panel_od: false,
@@ -268,7 +268,7 @@
           nv_temp_target: None,
         )
       '';
-      profileConfig = ''
+      profileConfig.text = ''
         (
           active_profile: Quiet,
         )
