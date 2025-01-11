@@ -32,6 +32,7 @@
       };
 
       config = {
+        dbtype = "sqlite";
         adminuser = "${username}";
         adminpassFile = config.sops.secrets.nextcloud_password.path;
       };
