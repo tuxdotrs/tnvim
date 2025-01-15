@@ -103,6 +103,15 @@ awful.keyboard.append_global_keybindings({
     awful.tag.incmwfact(0.05)
   end, { description = "increase master width factor", group = "layout" }),
 
+  -- Wibar related keybindings.
+  awful.key({ modkey, mod.shift }, "b", function()
+    for s in screen do
+      if s.mywibox then
+        s.mywibox.visible = not s.mywibox.visible
+      end
+    end
+  end, { description = "hide bar", group = "layout" }),
+
   -- Tag related keybindings.
   awful.key({
     modifiers = { modkey },
