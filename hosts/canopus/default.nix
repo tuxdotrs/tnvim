@@ -23,6 +23,13 @@
 
   nixpkgs.config.cudaSupport = true;
 
+  sops.secrets = {
+    hyperbolic_api_key = {
+      sopsFile = ./secrets.yaml;
+      owner = "${username}";
+    };
+  };
+
   networking = {
     hostName = "canopus";
     networkmanager = {
