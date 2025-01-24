@@ -159,28 +159,6 @@
       recommendedProxySettings = true;
       recommendedZstdSettings = true;
     };
-
-    borgbackup.jobs.arcturus-backup = {
-      paths = [
-        "/persist/home"
-        "/persist/etc"
-        "/persist/var/lib/headscale"
-        "/persist/var/lib/vaultwarden"
-        "/persist/var/lib/gitea"
-        "/persist/var/lib/grafana"
-        "/persist/var/lib/promtail"
-        "/persist/var/lib/private"
-        "/persist/var/lib/nextcloud"
-      ];
-      encryption = {
-        mode = "repokey-blake2";
-        passCommand = "cat ${config.sops.secrets.borg_encryption_key.path}";
-      };
-      environment.BORG_RSH = "ssh -i /home/${username}/.ssh/storagebox";
-      repo = "ssh://u416910@u416910.your-storagebox.de:23/./arcturus-backups";
-      compression = "auto,zstd";
-      startAt = "daily";
-    };
   };
 
   programs.fuse.userAllowOther = true;

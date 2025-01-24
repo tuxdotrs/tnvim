@@ -71,20 +71,6 @@
       recommendedProxySettings = true;
       recommendedTlsSettings = true;
     };
-
-    borgbackup.jobs.alpha-backup = {
-      paths = [
-        "/var/lib/private/uptime-kuma"
-      ];
-      encryption = {
-        mode = "repokey-blake2";
-        passCommand = "cat ${config.sops.secrets.borg_encryption_key.path}";
-      };
-      environment.BORG_RSH = "ssh -i /home/${username}/.ssh/storagebox";
-      repo = "ssh://u416910@u416910.your-storagebox.de:23/./alpha-backups";
-      compression = "auto,zstd";
-      startAt = "daily";
-    };
   };
 
   programs = {
