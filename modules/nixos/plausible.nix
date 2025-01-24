@@ -29,6 +29,7 @@
           locations = {
             "/" = {
               proxyPass = "http://localhost:2100";
+              proxyWebsockets = true;
             };
           };
         };
