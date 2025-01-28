@@ -18,6 +18,7 @@
     ../../modules/home-manager/vs-code
     ../../modules/home-manager/mopidy
     ../../modules/home-manager/thunderbird
+    ../../modules/home-manager/floorp
   ];
 
   home.pointerCursor = {
