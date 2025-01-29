@@ -3,12 +3,14 @@
   username,
   config,
   email,
+  inputs,
   ...
 }: {
   imports = [
     ./hardware.nix
     ../common
     ../../modules/nixos/uptime-kuma.nix
+    ../../modules/nixos/upstream-proxy.nix
   ];
 
   sops.secrets = {
@@ -63,6 +65,11 @@
   };
 
   users.users.nginx.extraGroups = ["acme"];
+
+  tux.services.nginxStreamProxy = {
+    enable = true;
+    upstreamServers = inputs.nix-secrets.proxy-servers;
+  };
 
   services = {
     nginx = {

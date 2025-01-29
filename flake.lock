@@ -343,6 +343,26 @@
         "type": "github"
       }
     },
+    "nix-secrets": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1738161919,
+        "narHash": "sha256-EKyY5XwFmgkEYElZEpNGEl6UsJO4jYvqtzZYtQPvD18=",
+        "owner": "tuxdotrs",
+        "repo": "nix-secrets",
+        "rev": "5f6314b52859812eb877b54ddf158098cf21c8c0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tuxdotrs",
+        "repo": "nix-secrets",
+        "type": "github"
+      }
+    },
     "nix-vscode-extensions": {
       "inputs": {
         "flake-compat": "flake-compat_3",
@@ -662,6 +682,7 @@
         "ghostty": "ghostty",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
+        "nix-secrets": "nix-secrets",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixos-hardware": "nixos-hardware",
         "nixos-wsl": "nixos-wsl",
