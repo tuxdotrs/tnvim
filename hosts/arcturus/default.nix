@@ -14,6 +14,7 @@
     (import ./disko.nix {device = "/dev/sda";})
 
     ../common
+    ../../modules/nixos/virtualisation/docker.nix
     ../../modules/nixos/postgresql.nix
     ../../modules/nixos/headscale.nix
     ../../modules/nixos/vaultwarden.nix
@@ -27,6 +28,7 @@
     ../../modules/nixos/wakapi.nix
     ../../modules/nixos/nextcloud.nix
     ../../modules/nixos/silver-bullet.nix
+    ../../modules/nixos/containers/cs2.nix
   ];
 
   sops.secrets = {
@@ -60,6 +62,18 @@
     };
 
     silver_bullet = {
+      sopsFile = ./secrets.yaml;
+    };
+
+    "cs2_secrets/SRCDS_TOKEN" = {
+      sopsFile = ./secrets.yaml;
+    };
+
+    "cs2_secrets/CS2_RCONPW" = {
+      sopsFile = ./secrets.yaml;
+    };
+
+    "cs2_secrets/CS2_PW" = {
       sopsFile = ./secrets.yaml;
     };
   };
