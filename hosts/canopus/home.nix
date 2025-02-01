@@ -82,6 +82,7 @@
       ".local/share/zoxide"
       ".local/share/Smart\ Code\ ltd"
       ".local/share/GalaxyBudsClient"
+      ".local/share/TelegramDesktop"
       ".local/state/lazygit"
       ".cache/spotify"
     ];
