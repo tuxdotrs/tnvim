@@ -12,7 +12,7 @@ local opts = {
       __inherited_from = "openai",
       api_key_name = "cmd:cat /run/secrets/hyperbolic_api_key",
       endpoint = "https://api.hyperbolic.xyz/v1",
-      model = "deepseek-ai/DeepSeek-V3",
+      model = "deepseek-ai/DeepSeek-R1",
       temperature = 0,
       max_tokens = 4096,
     },
