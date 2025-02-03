@@ -14,6 +14,7 @@
     ../common
     ../../modules/nixos/desktop
     ../../modules/nixos/virtualisation/docker.nix
+    ../../modules/nixos/open-webui.nix
   ];
 
   networking = {
