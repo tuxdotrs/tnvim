@@ -5,6 +5,7 @@
 }: {
   services = {
     displayManager = {
+      defaultSession = "none+awesome";
       sddm = {
         package = pkgs.libsForQt5.sddm;
         extraPackages = with pkgs; [libsForQt5.qt5.qtgraphicaleffects];
