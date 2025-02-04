@@ -78,6 +78,7 @@
       ".config/Vencord"
       ".config/sops"
       ".config/obs-studio"
+      ".config/spotify"
       ".local/share/nvim"
       ".local/share/zoxide"
       ".local/share/Smart\ Code\ ltd"
