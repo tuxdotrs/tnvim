@@ -28,6 +28,7 @@
     ../../modules/nixos/wakapi.nix
     ../../modules/nixos/nextcloud.nix
     ../../modules/nixos/silver-bullet.nix
+    ../../modules/nixos/rustdesk-server.nix
     ../../modules/nixos/containers/cs2.nix
   ];
 
