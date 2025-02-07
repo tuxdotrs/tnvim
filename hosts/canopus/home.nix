@@ -73,6 +73,7 @@
       ".mozilla"
       ".ssh"
       ".wakatime"
+      ".rustup"
       ".config/copyq"
       ".config/discord"
       ".config/Vencord"
