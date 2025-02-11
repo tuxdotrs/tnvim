@@ -14,6 +14,7 @@
     ../../modules/home-manager/desktop/rofi
     ../../modules/home-manager/barrier
     ../../modules/home-manager/firefox
+    ../../modules/home-manager/librewolf
     ../../modules/home-manager/kdeconnect
     ../../modules/home-manager/vs-code
     ../../modules/home-manager/mopidy
