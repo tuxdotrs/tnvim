@@ -75,6 +75,7 @@
       ".ssh"
       ".wakatime"
       ".rustup"
+      ".cargo"
       ".config/copyq"
       ".config/discord"
       ".config/Vencord"
