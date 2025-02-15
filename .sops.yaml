@@ -48,3 +48,8 @@ creation_rules:
       - age:
           - *tux
           - *capella
+  - path_regex: hosts/homelab/secrets.yaml$
+    key_groups:
+      - age:
+          - *tux
+          - *homelab

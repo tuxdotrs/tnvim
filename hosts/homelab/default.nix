@@ -3,6 +3,7 @@
   username,
   pkgs,
   lib,
+  config,
   ...
 }: {
   imports = [
@@ -15,7 +16,19 @@
     ../../modules/nixos/desktop
     ../../modules/nixos/virtualisation/docker.nix
     ../../modules/nixos/open-webui.nix
+    ../../modules/nixos/cyber-tux.nix
   ];
+
+  sops.secrets = {
+    discord_token = {
+      sopsFile = ./secrets.yaml;
+    };
+  };
+
+  tux.services.cyber-tux = {
+    enable = true;
+    environmentFile = config.sops.secrets.discord_token.path;
+  };
 
   networking = {
     hostName = "homelab";
