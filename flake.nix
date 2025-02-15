@@ -87,7 +87,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-secrets = {
-      url = "github:tuxdotrs/nix-secrets";
+      url = "git+ssh://git@github.com/tuxdotrs/nix-secrets.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ghostty.url = "github:ghostty-org/ghostty";
