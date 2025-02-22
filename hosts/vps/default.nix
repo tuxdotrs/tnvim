@@ -14,6 +14,8 @@
     ../common
   ];
 
+  tux.services.openssh.enable = true;
+
   nixpkgs = {
     hostPlatform = "x86_64-linux";
   };

@@ -12,6 +12,8 @@
     ../../modules/nixos/virtualisation/docker.nix
   ];
 
+  tux.services.openssh.enable = true;
+
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
   nixpkgs = {

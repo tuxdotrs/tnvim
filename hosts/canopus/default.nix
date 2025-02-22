@@ -21,6 +21,8 @@
     ../../modules/nixos/steam.nix
   ];
 
+  tux.services.openssh.enable = true;
+
   nixpkgs.config.cudaSupport = true;
 
   sops.secrets = {

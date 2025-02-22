@@ -15,6 +15,8 @@
     ../../modules/nixos/containers/cs2.nix
   ];
 
+  tux.services.openssh.enable = true;
+
   sops.secrets = {
     "cs2_secrets/SRCDS_TOKEN" = {
       sopsFile = ./secrets.yaml;

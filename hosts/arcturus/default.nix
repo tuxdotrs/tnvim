@@ -32,6 +32,8 @@
     ../../modules/nixos/containers/cs2.nix
   ];
 
+  tux.services.openssh.enable = true;
+
   sops.secrets = {
     borg_encryption_key = {
       sopsFile = ./secrets.yaml;

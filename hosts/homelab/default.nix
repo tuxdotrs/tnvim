@@ -19,6 +19,8 @@
     ../../modules/nixos/cyber-tux.nix
   ];
 
+  tux.services.openssh.enable = true;
+
   sops.secrets = {
     discord_token = {
       sopsFile = ./secrets.yaml;

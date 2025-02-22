@@ -10,6 +10,8 @@
     ../../modules/nixos/adguard.nix
   ];
 
+  tux.services.openssh.enable = true;
+
   boot.initrd.availableKernelModules = [
     "usbhid"
     "usb_storage"
