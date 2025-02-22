@@ -35,6 +35,22 @@
         path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.${hostname};
       };
     };
+
+    activateNixOnDroid = configuration:
+      deploy-rs.lib.aarch64-linux.activate.custom
+      configuration.activationPackage
+      "${configuration.activationPackage}/activate";
+
+    mkDroidNode = hostname: {
+      inherit hostname;
+      profiles.system = {
+        sshUser = "nix-on-droid";
+        user = "nix-on-droid";
+        magicRollback = true;
+        sshOpts = ["-p" "8022"];
+        path = activateNixOnDroid self.nixOnDroidConfigurations.${hostname};
+      };
+    };
   in {
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
@@ -71,6 +87,7 @@
         vega = mkNode "vega";
         capella = mkNode "capella";
         homelab = mkNode "homelab";
+        rigel = mkDroidNode "rigel";
       };
     };
     checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
