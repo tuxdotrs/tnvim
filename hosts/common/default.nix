@@ -11,7 +11,6 @@
 
     ../../modules/base
     ../../modules/nixos/fail2ban.nix
-    ../../modules/nixos/sops.nix
     ../../modules/nixos/upstream-proxy.nix
     ../../modules/nixos/tfolio.nix
     ../../modules/nixos/cyber-tux.nix
