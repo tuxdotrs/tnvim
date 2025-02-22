@@ -4,22 +4,22 @@
   ...
 }: {
   imports = [
-    ../../modules/home-manager/desktop/awesome
-    ../../modules/home-manager/desktop/hyprland
-    ../../modules/home-manager/desktop/waybar
-    ../../modules/home-manager/picom
-    ../../modules/home-manager/alacritty
-    ../../modules/home-manager/wezterm
-    ../../modules/home-manager/ghostty
-    ../../modules/home-manager/desktop/rofi
-    ../../modules/home-manager/barrier
-    ../../modules/home-manager/firefox
-    ../../modules/home-manager/librewolf
-    ../../modules/home-manager/kdeconnect
-    ../../modules/home-manager/vs-code
-    ../../modules/home-manager/mopidy
-    ../../modules/home-manager/thunderbird
-    ../../modules/home-manager/floorp
+    ../../modules/home/desktop/awesome
+    ../../modules/home/desktop/hyprland
+    ../../modules/home/desktop/waybar
+    ../../modules/home/picom
+    ../../modules/home/alacritty
+    ../../modules/home/wezterm
+    ../../modules/home/ghostty
+    ../../modules/home/desktop/rofi
+    ../../modules/home/barrier
+    ../../modules/home/firefox
+    ../../modules/home/librewolf
+    ../../modules/home/kdeconnect
+    ../../modules/home/vs-code
+    ../../modules/home/mopidy
+    ../../modules/home/thunderbird
+    ../../modules/home/floorp
   ];
 
   home.pointerCursor = {

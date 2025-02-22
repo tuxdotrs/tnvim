@@ -7,13 +7,13 @@
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
 
-    ../../modules/home-manager/shell
-    ../../modules/home-manager/git
-    ../../modules/home-manager/starship
-    ../../modules/home-manager/nvim
-    ../../modules/home-manager/tmux
-    ../../modules/home-manager/helix
-    ../../modules/home-manager/aria2
+    ../../modules/home/shell
+    ../../modules/home/git
+    ../../modules/home/starship
+    ../../modules/home/nvim
+    ../../modules/home/tmux
+    ../../modules/home/helix
+    ../../modules/home/aria2
   ];
 
   nixpkgs = {
