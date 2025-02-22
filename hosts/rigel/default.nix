@@ -16,6 +16,11 @@
   android-integration.termux-setup-storage.enable = true;
   android-integration.termux-reload-settings.enable = true;
 
+  terminal.font = let
+    firacode = pkgs.nerd-fonts.fira-code;
+    fontPath = "share/fonts/truetype/NerdFonts/FiraCode/FiraCodeNerdFont-Regular.ttf";
+  in "${firacode}/${fontPath}";
+
   time.timeZone = "Asia/Kolkata";
 
   tux.services.openssh = {
