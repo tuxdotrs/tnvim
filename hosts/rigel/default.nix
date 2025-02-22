@@ -14,6 +14,7 @@
   android-integration.termux-open-url.enable = true;
   android-integration.xdg-open.enable = true;
   android-integration.termux-setup-storage.enable = true;
+  android-integration.termux-reload-settings.enable = true;
 
   time.timeZone = "Asia/Kolkata";
 
