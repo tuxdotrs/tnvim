@@ -14,6 +14,7 @@
   ];
 
   tux.services.openssh.enable = true;
+  tux.services.openssh.ports = [23];
 
   sops.secrets = {
     borg_encryption_key = {
