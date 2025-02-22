@@ -9,6 +9,7 @@
   } @ inputs: let
     inherit (self) outputs;
     inherit (inputs.nixpkgs.lib) nixosSystem;
+    inherit (inputs.nix-on-droid.lib) nixOnDroidConfiguration;
     forAllSystems = nixpkgs.lib.genAttrs [
       "x86_64-linux"
       "aarch64-linux"
@@ -18,6 +19,12 @@
 
     mkNixOSConfig = host: {
       specialArgs = {inherit inputs outputs username email;};
+      modules = [./hosts/${host}];
+    };
+
+    mkDroidConfig = host: {
+      pkgs = import nixpkgs {system = "aarch64-linux";};
+      extraSpecialArgs = {inherit inputs outputs username email;};
       modules = [./hosts/${host}];
     };
 
@@ -47,6 +54,12 @@
       vps = nixosSystem (mkNixOSConfig "vps");
       isoImage = nixosSystem (mkNixOSConfig "isoImage");
       homelab = nixosSystem (mkNixOSConfig "homelab");
+    };
+
+    # NixOnDroid configuration entrypoint
+    # 'nix-on-droid switch --flake .#your-hostname'
+    nixOnDroidConfigurations = {
+      rigel = nixOnDroidConfiguration (mkDroidConfig "rigel");
     };
 
     deploy = {
@@ -89,6 +102,11 @@
     nix-secrets = {
       url = "git+ssh://git@github.com/tuxdotrs/nix-secrets.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
     tfolio = {
       url = "git+ssh://git@github.com/tuxdotrs/tfolio.git";
