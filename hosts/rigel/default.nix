@@ -18,7 +18,11 @@
     ];
   };
 
-  user.shell = "${pkgs.zsh}/bin/zsh";
+  user = {
+    uid = 10559;
+    gid = 10559;
+    shell = "${pkgs.zsh}/bin/zsh";
+  };
 
   environment.packages = with pkgs; [
     nano
