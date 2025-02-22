@@ -28,7 +28,7 @@
       modules = [./hosts/${host}];
     };
 
-    mkNode = hostname: {
+    mkNixOSNode = hostname: {
       inherit hostname;
       profiles.system = {
         user = "root";
@@ -80,13 +80,13 @@
 
     deploy = {
       nodes = {
-        arcturus = mkNode "arcturus";
-        canopus = mkNode "canopus";
-        alpha = mkNode "alpha";
-        sirius = mkNode "sirius";
-        vega = mkNode "vega";
-        capella = mkNode "capella";
-        homelab = mkNode "homelab";
+        arcturus = mkNixOSNode "arcturus";
+        canopus = mkNixOSNode "canopus";
+        alpha = mkNixOSNode "alpha";
+        sirius = mkNixOSNode "sirius";
+        vega = mkNixOSNode "vega";
+        capella = mkNixOSNode "capella";
+        homelab = mkNixOSNode "homelab";
         rigel = mkDroidNode "rigel";
       };
     };
