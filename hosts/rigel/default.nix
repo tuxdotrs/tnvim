@@ -10,6 +10,13 @@
     ../../modules/droid/sshd.nix
   ];
 
+  android-integration.am.enable = true;
+  android-integration.termux-open-url.enable = true;
+  android-integration.xdg-open.enable = true;
+  android-integration.termux-setup-storage.enable = true;
+
+  time.timeZone = "Asia/Kolkata";
+
   tux.services.openssh = {
     enable = true;
     ports = [8022];
