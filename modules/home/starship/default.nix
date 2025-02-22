@@ -12,6 +12,7 @@
         style = "bold green";
         disabled = false;
         symbols.NixOS = "󰊠";
+        symbols.Linux = "󰊠";
       };
       directory = {
         format = "[$path]($style)[$read_only ]($read_only_style)";
