@@ -37,6 +37,7 @@
     shell = "${pkgs.zsh}/bin/zsh";
   };
 
+  environment.motd = '''';
   environment.packages = with pkgs; [
     nano
     git
