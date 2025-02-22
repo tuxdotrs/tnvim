@@ -10,7 +10,6 @@
     ./hardware.nix
     ../common
     ../../modules/nixos/uptime-kuma.nix
-    ../../modules/nixos/upstream-proxy.nix
   ];
 
   tux.services.openssh.enable = true;

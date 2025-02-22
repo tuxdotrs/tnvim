@@ -16,7 +16,6 @@
     ../../modules/nixos/desktop
     ../../modules/nixos/virtualisation/docker.nix
     ../../modules/nixos/open-webui.nix
-    ../../modules/nixos/cyber-tux.nix
   ];
 
   tux.services.openssh.enable = true;
