@@ -9,7 +9,7 @@
   imports = [
     ./hardware.nix
     ../common
-    ../../modules/nixos/uptime-kuma.nix
+    ../../modules/nixos/selfhosted/uptime-kuma.nix
   ];
 
   tux.services.openssh.enable = true;

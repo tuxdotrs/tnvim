@@ -7,7 +7,7 @@
     ./hardware.nix
     ../common
 
-    ../../modules/nixos/adguard.nix
+    ../../modules/nixos/selfhosted/adguard.nix
   ];
 
   tux.services.openssh.enable = true;

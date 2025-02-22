@@ -12,7 +12,7 @@
 
     ../common
     ../../modules/nixos/virtualisation/docker.nix
-    ../../modules/nixos/containers/cs2.nix
+    ../../modules/nixos/selfhosted/containers/cs2.nix
   ];
 
   tux.services.openssh.enable = true;

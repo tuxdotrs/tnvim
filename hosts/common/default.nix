@@ -11,9 +11,9 @@
 
     ../../modules/base
     ../../modules/nixos/fail2ban.nix
-    ../../modules/nixos/upstream-proxy.nix
-    ../../modules/nixos/tfolio.nix
-    ../../modules/nixos/cyber-tux.nix
+    ../../modules/nixos/selfhosted/upstream-proxy.nix
+    ../../modules/nixos/selfhosted/tfolio.nix
+    ../../modules/nixos/selfhosted/cyber-tux.nix
     ../../modules/nixos/networking/ssh.nix
   ];
 

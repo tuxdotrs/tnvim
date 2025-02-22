@@ -15,21 +15,21 @@
 
     ../common
     ../../modules/nixos/virtualisation/docker.nix
-    ../../modules/nixos/postgresql.nix
-    ../../modules/nixos/headscale.nix
-    ../../modules/nixos/vaultwarden.nix
-    ../../modules/nixos/gitea.nix
-    ../../modules/nixos/plausible.nix
-    ../../modules/nixos/monitoring/grafana.nix
-    ../../modules/nixos/monitoring/loki.nix
-    ../../modules/nixos/monitoring/promtail.nix
-    ../../modules/nixos/ntfy-sh.nix
-    ../../modules/nixos/searx.nix
-    ../../modules/nixos/wakapi.nix
-    ../../modules/nixos/nextcloud.nix
-    ../../modules/nixos/silver-bullet.nix
-    ../../modules/nixos/rustdesk-server.nix
-    ../../modules/nixos/containers/cs2.nix
+    ../../modules/nixos/selfhosted/postgresql.nix
+    ../../modules/nixos/selfhosted/headscale.nix
+    ../../modules/nixos/selfhosted/vaultwarden.nix
+    ../../modules/nixos/selfhosted/gitea.nix
+    ../../modules/nixos/selfhosted/plausible.nix
+    ../../modules/nixos/selfhosted/monitoring/grafana.nix
+    ../../modules/nixos/selfhosted/monitoring/loki.nix
+    ../../modules/nixos/selfhosted/monitoring/promtail.nix
+    ../../modules/nixos/selfhosted/ntfy-sh.nix
+    ../../modules/nixos/selfhosted/searx.nix
+    ../../modules/nixos/selfhosted/wakapi.nix
+    ../../modules/nixos/selfhosted/nextcloud.nix
+    ../../modules/nixos/selfhosted/silver-bullet.nix
+    ../../modules/nixos/selfhosted/rustdesk-server.nix
+    ../../modules/nixos/selfhosted/containers/cs2.nix
   ];
 
   tux.services.openssh.enable = true;
