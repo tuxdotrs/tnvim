@@ -13,19 +13,19 @@ in {
     host = mkOption {
       type = lib.types.str;
       default = "0.0.0.0";
-      description = "";
+      description = "IP address or hostname on which the tfolio service will listen.";
     };
 
     port = mkOption {
       type = lib.types.port;
       default = 22;
-      description = "";
+      description = "Port number on which the tfolio service will listen.";
     };
 
     dataDir = mkOption {
       type = lib.types.str;
       default = "/var/lib/tfolio/";
-      description = "";
+      description = "Directory where tfolio will store its data files.";
     };
 
     user = mkOption {
