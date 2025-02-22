@@ -10,7 +10,7 @@
     ../../modules/droid/sshd.nix
   ];
 
-  services.openssh = {
+  tux.services.openssh = {
     enable = true;
     ports = [8022];
     authorizedKeys = [

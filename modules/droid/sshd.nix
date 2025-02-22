@@ -24,7 +24,7 @@
   sshd-start-bin = "sshd-start";
 
   # real config
-  cfg = config.services.openssh;
+  cfg = config.tux.services.openssh;
 
   pathOfKeyOf = type: "${keysFolder}/ssh_host_${type}_key";
 
@@ -56,7 +56,7 @@
   '';
 in {
   options = {
-    services.openssh = {
+    tux.services.openssh = {
       enable = lib.mkEnableOption ''
         Whether to enable the OpenSSH secure shell daemon, which
         allows secure remote logins.
