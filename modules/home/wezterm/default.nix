@@ -21,7 +21,7 @@
       config.font = wezterm.font_with_fallback {
         'JetBrainsMono Nerd Font',
       }
-      config.font_size = 16.0
+      config.font_size = 14.0
       config.window_background_opacity = 1
       config.audible_bell = "Disabled"
 
