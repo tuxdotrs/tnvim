@@ -90,6 +90,10 @@
       url = "git+ssh://git@github.com/tuxdotrs/nix-secrets.git?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tfolio = {
+      url = "git+ssh://git@github.com/tuxdotrs/tfolio.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     cyber-tux = {
       url = "git+ssh://git@github.com/tuxdotrs/cyber-tux.git";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -713,6 +713,7 @@
         "nixpkgs-stable": "nixpkgs-stable_3",
         "nur": "nur",
         "sops-nix": "sops-nix",
+        "tfolio": "tfolio",
         "wezterm-flake": "wezterm-flake"
       }
     },
@@ -830,6 +831,26 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "tfolio": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1740197906,
+        "narHash": "sha256-G4H/c91GlHhUG7joDXxmvtcWz1xepzwRR4J+gQGLH+k=",
+        "ref": "refs/heads/main",
+        "rev": "23cf45aa50e8db9533d8ca432bcd7b4d2bc2b421",
+        "revCount": 13,
+        "type": "git",
+        "url": "ssh://git@github.com/tuxdotrs/tfolio.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/tuxdotrs/tfolio.git"
       }
     },
     "treefmt-nix": {
