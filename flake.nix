@@ -133,6 +133,10 @@
       url = "git+ssh://git@github.com/tuxdotrs/cyber-tux.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     ghostty.url = "github:ghostty-org/ghostty";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nixpkgs-f2k.url = "github:moni-dz/nixpkgs-f2k";

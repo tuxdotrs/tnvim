@@ -8,6 +8,7 @@
   imports = [
     inputs.impermanence.nixosModules.impermanence
     inputs.home-manager.nixosModules.home-manager
+    inputs.nix-index-database.nixosModules.nix-index
 
     ../../modules/base
     ../../modules/nixos/fail2ban.nix

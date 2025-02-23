@@ -6,6 +6,7 @@
 }: {
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
+    inputs.nix-index-database.hmModules.nix-index
 
     ../../modules/home/shell
     ../../modules/home/git
@@ -30,11 +31,6 @@
       allowUnfreePredicate = _: true;
       joypixels.acceptLicense = true;
     };
-  };
-
-  programs.nix-index = {
-    enable = true;
-    enableZshIntegration = true;
   };
 
   home = {
