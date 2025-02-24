@@ -29,7 +29,7 @@
     ../../modules/nixos/selfhosted/nextcloud.nix
     ../../modules/nixos/selfhosted/silver-bullet.nix
     ../../modules/nixos/selfhosted/rustdesk-server.nix
-    ../../modules/nixos/selfhosted/containers/cs2.nix
+    ../../modules/nixos/selfhosted/kasmweb.nix
   ];
 
   tux.services.openssh.enable = true;
