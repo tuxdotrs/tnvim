@@ -66,7 +66,10 @@
     };
   };
 
-  networking.hostName = "capella";
+  networking = {
+    hostName = "capella";
+    firewall.enable = false;
+  };
 
   users = {
     users.${username} = {
