@@ -17,6 +17,9 @@
       };
       syntaxHighlighting.enable = true;
       autosuggestion.enable = true;
+      initExtra = ''
+        fastfetch
+      '';
     };
   };
 
@@ -24,6 +27,7 @@
     neovim
     busybox
     lsd
+    fastfetch
   ];
 
   home.stateVersion = "24.05";
