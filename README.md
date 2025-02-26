@@ -38,10 +38,10 @@ Boot into NixOS bootable USB and then enter the following commands
 
 ```
 # Clone this repositry
-git clone https://github.com/tuxdotrs/nixos-config.git
+git clone https://github.com/tuxdotrs/nix-config.git
 
 # Navigate to the repository directory
-cd nixos-config
+cd nix-config
 
 # Install disko for disk partitioning
 nix-shell -p disko
