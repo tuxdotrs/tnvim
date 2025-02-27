@@ -2,19 +2,19 @@
   stdenv,
   lib,
 }: let
-  awesome = ./awesome;
+  nvim = ./src;
 in
   stdenv.mkDerivation {
-    pname = "tux-awesome-wm-config";
-    version = "0.1.0";
+    pname = "tnvim";
+    version = "2.5.0";
 
     buildCommand = ''
       mkdir -p $out
-      cp -r ${awesome}/* "$out/"
+      cp -r ${nvim}/* "$out/"
     '';
 
     meta = with lib; {
-      description = "tux's awesome-wm config";
+      description = "tux's nvim config";
       homepage = "https://tux.rs";
       platforms = platforms.all;
       license = licenses.gpl3;
