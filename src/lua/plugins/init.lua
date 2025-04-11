@@ -212,5 +212,6 @@ local plugins = {
       require("configs.smart-yank")
     end,
   },
+  { import = "nvchad.blink.lazyspec" },
 }
 return plugins
