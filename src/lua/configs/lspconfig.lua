@@ -4,7 +4,7 @@ local capabilities = configs.capabilities
 
 local lspconfig = require("lspconfig")
 
-local servers = { "eslint", "gopls", "templ" }
+local servers = { "eslint", "gopls", "templ", "pyright", "ruff" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({

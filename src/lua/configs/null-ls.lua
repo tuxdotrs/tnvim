@@ -19,6 +19,10 @@ local opts = {
     b.formatting.gofumpt,
     b.formatting.goimports,
     b.diagnostics.staticcheck,
+
+    -- python
+    b.diagnostics.ruff,
+    b.formatting.black,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
