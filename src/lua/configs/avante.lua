@@ -1,11 +1,18 @@
 local opts = {
-  provider = "hyperbolic",
+  provider = "google",
   providers = {
     deepseek = {
       __inherited_from = "openai",
       api_key_name = "DEEPSEEK_API_KEY",
       endpoint = "https://api.deepseek.com/v1",
       model = "deepseek-chat",
+    },
+
+    google = {
+      __inherited_from = "openai",
+      api_key_name = "cmd:cat /run/secrets/google_api_key",
+      endpoint = "https://generativelanguage.googleapis.com/v1beta/openai",
+      model = "models/gemini-2.5-pro",
     },
 
     hyperbolic = {
