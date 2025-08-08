@@ -1,5 +1,5 @@
 local opts = {
-  provider = "google",
+  provider = "gemini",
   providers = {
     deepseek = {
       __inherited_from = "openai",
@@ -8,9 +8,9 @@ local opts = {
       model = "deepseek-chat",
     },
 
-    google = {
+    gemini = {
       __inherited_from = "openai",
-      api_key_name = "cmd:cat /run/secrets/google_api_key",
+      api_key_name = "cmd:cat /run/secrets/gemini_api_key",
       endpoint = "https://generativelanguage.googleapis.com/v1beta/openai",
       model = "models/gemini-2.5-pro",
     },
