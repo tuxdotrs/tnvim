@@ -16,6 +16,7 @@ M.treesitter = {
     "javascript",
     "typescript",
     "tsx",
+    "svelte",
 
     -- nix
     "nix",
@@ -48,6 +49,7 @@ M.mason = {
     "eslint-lsp",
     "eslint_d",
     "tailwindcss-language-server",
+    "svelte-language-server",
 
     -- nix
     "nil",

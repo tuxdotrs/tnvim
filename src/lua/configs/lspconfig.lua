@@ -4,7 +4,7 @@ local capabilities = configs.capabilities
 
 local lspconfig = require("lspconfig")
 
-local servers = { "eslint", "gopls", "templ", "pyright", "ruff" }
+local servers = { "eslint", "gopls", "templ", "pyright", "ruff", "svelte" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
@@ -42,6 +42,6 @@ lspconfig.htmx.setup({
 lspconfig.tailwindcss.setup({
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = { "templ", "astro", "javascript", "typescript", "react", "typescriptreact" },
+  filetypes = { "templ", "astro", "javascript", "typescript", "react", "typescriptreact", "svelte" },
   init_options = { userLanguages = { templ = "html" } },
 })
