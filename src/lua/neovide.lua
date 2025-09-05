@@ -4,7 +4,7 @@ local g = vim.g
 if g.neovide then
   -- options
   g.neovide_scale_factor = 0.7
-  g.neovide_transparency = 0.9
+  g.neovide_opacity = 0.9
   g.neovide_refresh_rate = 144
 
   -- bindings
