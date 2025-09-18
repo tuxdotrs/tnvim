@@ -19,6 +19,10 @@ local toggleLazygit = function()
   require("nvchad.term").toggle({ pos = "float", id = "lazygit", float_opts = float_opts, cmd = "lazygit" })
 end
 
+local toggleOpenCode = function()
+  require("nvchad.term").toggle({ pos = "float", id = "opencode", float_opts = float_opts, cmd = "opencode" })
+end
+
 local toggleTreesj = function()
   require("treesj").toggle()
 end
@@ -29,6 +33,7 @@ end
 
 map({ "n", "t" }, "<F7>", toggleTerm, { desc = "Toggle Floating Terminal" })
 map({ "n", "t" }, "<F8>", toggleLazygit, { desc = "Toggle Lazygit" })
+map({ "n", "t" }, "<F9>", toggleOpenCode, { desc = "Toggle OpenCode" })
 map("n", "<leader>Sl", "<cmd>SessionManager! load_last_session<cr>", { desc = "Load last session" })
 map("n", "<leader>Ss", "<cmd>SessionManager! save_current_session<cr>", { desc = "Save this session" })
 map("n", "<leader>Sd", "<cmd>SessionManager! delete_session<cr>", { desc = "Delete session" })
