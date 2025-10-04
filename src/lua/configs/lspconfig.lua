@@ -1,23 +1,7 @@
-local configs = require("nvchad.configs.lspconfig")
-local on_attach = configs.on_attach
-local capabilities = configs.capabilities
+local servers = { "eslint", "gopls", "templ", "pyright", "ruff", "svelte", "tailwindcss", "nil_ls", "html", "htmx" }
 
-local lspconfig = require("lspconfig")
-
-local servers = { "eslint", "gopls", "templ", "pyright", "ruff", "svelte" }
-
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-  })
-end
-
-lspconfig.nil_ls.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+vim.lsp.config("nil_ls", {
   filetypes = { "nix" },
-  cmd = { "nil" },
   settings = {
     ["nil"] = {
       flake = {
@@ -27,21 +11,12 @@ lspconfig.nil_ls.setup({
   },
 })
 
-lspconfig.html.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+vim.lsp.config("html", {
   filetypes = { "html", "templ" },
 })
 
-lspconfig.htmx.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+vim.lsp.config("htmx", {
   filetypes = { "html", "templ" },
 })
 
-lspconfig.tailwindcss.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "templ", "astro", "javascript", "typescript", "react", "typescriptreact", "svelte" },
-  init_options = { userLanguages = { templ = "html" } },
-})
+vim.lsp.enable(servers)
