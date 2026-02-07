@@ -26,21 +26,15 @@ local plugins = {
     },
   },
   {
-    "yetone/avante.nvim",
+    "nickjvandyke/opencode.nvim",
     event = "VeryLazy",
     lazy = false,
-    version = false,
-    build = "make",
-    opts = function()
-      return require("configs.avante")
-    end,
     dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons",
+      { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
     },
+    config = function()
+      require("configs.open-code")
+    end,
   },
   {
     "Shatur/neovim-session-manager",
