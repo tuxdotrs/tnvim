@@ -30,6 +30,9 @@ M.treesitter = {
 
     -- rust
     "rust",
+
+    -- qml
+    "qmljs",
   },
 }
 

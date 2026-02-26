@@ -23,6 +23,10 @@ local opts = {
     -- python
     b.diagnostics.ruff,
     b.formatting.black,
+
+    -- qml
+    b.diagnostics.qmllint,
+    b.formatting.qmlformat,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then

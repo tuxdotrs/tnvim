@@ -17,6 +17,7 @@ local options = {
     nix = { "alejandra" },
     go = { "goimports", "gofumpt" },
     rust = { "rust_analyzer" },
+    qml = { "qmlformat" },
   },
 
   format_on_save = {
